@@ -16,7 +16,9 @@ function getBlogPosts() {
   return fetch(
     "https://api.github.com/repos/leonardmeagher2/leonardmeagher2.github.io/contents/blog"
   ).then(function(response) {
-    return response.json().map(function(post){
+    return response.json();
+  }).then(function(posts){
+    return posts.map(function(post){
       var parts = post.name.split("-");
       return {
         file_path: `/blog/${post.name}`,

@@ -26,7 +26,7 @@ function getBlogPosts() {
         date: new Date(parts[0].replace(/_/g, "/"))
       }
     }).sort(function(a,b){
-      return a.date - b.date;
+      return b.date - a.date;
     });
   });
 }

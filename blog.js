@@ -32,7 +32,7 @@ function getBlogPosts() {
 }
 
 function showPost(post) {
-  fetch(post.file_name)
+  fetch(post.file_path)
   .then(function(response) {
     return response.text();
   })

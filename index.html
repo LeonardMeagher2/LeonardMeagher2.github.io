@@ -22,12 +22,9 @@
       margin-bottom: 4px;
     }
 
-    header p {
-      margin-top: 0px;
-    }
-
     nav {
       padding: 4px;
+      margin-bottom: 20px;
     }
 
     a {
@@ -46,10 +43,42 @@
       text-align: left;
     }
 
+    ul {
+      list-style: none;
+      padding: 0;
+      text-align: left;
+    }
+
+    ul>li {
+      padding: 4px 0px;
+    }
+
+    ul>li:before {
+      content: "- ";
+      color: var(--secondary);
+    }
+
+
     .slot {
       border: 1px solid white;
       display: inline-block;
       padding: 14px;
+    }
+
+    .js {
+      color: #F7DF1E;
+    }
+    .py {
+      color: #53a1e2;
+    }
+    .nim {
+      color: #FFE953;
+    }
+    .css {
+      color: #3595CF;
+    }
+    .html {
+      color: #E76233;
     }
   </style>
 </head>
@@ -57,15 +86,25 @@
 <body>
   <header>
     <h1>Leonard Meagher</h1>
-    <p class="slot">
-      I program professionally, and as a hobby.
-      <br />
-      I use <a href="https://godotengine.org">Godot</a> for game development
-    </p>
+    <nav>
+      <a href="https://www.github.com/LeonardMeagher2" title="Checkout my code!">Github</a>
+    </nav>
   </header>
-  <nav>
-    <a href="https://www.github.com/LeonardMeagher2">Github</a>
-  </nav>
+  <section>
+    <div class="slot">
+      <p>
+        I program professionally, and as a hobby.
+      </p>
+      <ul>
+        <li>I program in <span class="js">Javascript</span>, <span class="py">Python</span>, and a little <span class="nim">nim</span></li>
+        <li>I use <span class="css">CSS</span>, <span class="html">HTML</span> for markup and styling. </li>
+        <li>I use <a href="https://godotengine.org" title="Get the engine.">Godot</a> for game development</li>
+
+      </ul>
+    </div>
+  </section>
+
+
 </body>
 
 </html>

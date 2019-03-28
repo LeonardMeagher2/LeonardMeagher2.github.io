@@ -154,11 +154,12 @@
     var speed = 30; // n times a second
     var last_change = 0.0
     var trend = 0.0;
+    var last_trend = 0.0
 
     function loop() {
       var change = conway.step() * 100;
       trend += change - last_change;
-      if (change < 1) {
+      if (change < 1 || trend == last_trend) {
         conway.randomizeState(Math.random());
         conway.step();
         conway.step();

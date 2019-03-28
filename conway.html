@@ -130,8 +130,8 @@
 
     var ctx = canvas.getContext("2d");
 
-    //ctx.fillStyle = "rgb("+[(Math.random() * 255) | 0, (Math.random() * 255) | 0, (Math.random() * 255) | 0].join(',')+")";
-    //ctx.fillRect(0,0,canvas.width,canvas.height);
+    ctx.fillStyle = "white";
+    ctx.fillRect(0,0,canvas.width,canvas.height);
 
     function draw(game) {
       var state = game.state;

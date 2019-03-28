@@ -117,9 +117,9 @@
     };
 
 
-    var WIDTH = (window.innerWidth / 8) | 0,
-      HEIGHT = (window.innerHeight / 8) | 0,
-      tileSize = 8;
+    var WIDTH = (window.innerWidth) | 0,
+      HEIGHT = (window.innerHeight) | 0,
+      tileSize = 1;
     var conway = new Game(WIDTH, HEIGHT);
     conway.randomizeState(Math.random());
     conway.step();

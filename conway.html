@@ -114,11 +114,12 @@
         return change;
       }
     };
-
-
-    var WIDTH = (window.innerWidth) | 0,
-      HEIGHT = (window.innerHeight) | 0,
-      tileSize = 1;
+    
+    var url = new URL(location.href);
+    var scale = url.searchParams.get("scale") || 8;
+    var WIDTH = (window.innerWidth/scale) | 0,
+      HEIGHT = (window.innerHeight/scale) | 0,
+      tileSize = scale;
     var conway = new Game(WIDTH, HEIGHT);
     conway.randomizeState(Math.random());
     conway.step();

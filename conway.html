@@ -156,7 +156,7 @@
     var trend = 0.0;
     var last_trend = 0.0
 
-    function loop() {
+    function step() {
       var change = conway.step() * 100;
       trend += change - last_change;
       if (change < 1 || trend == last_trend) {
@@ -165,13 +165,12 @@
         conway.step();
       }
       last_change = change
-      t = setTimeout(loop, 1000 / speed);
     }
     (function d() {
+      step();
       draw(conway);
       requestAnimationFrame(d);
     }());
-    loop();
 
     canvas.addEventListener("click", function() {
       conway.randomizeState(Math.random());

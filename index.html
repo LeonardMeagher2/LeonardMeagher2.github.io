@@ -12,11 +12,11 @@
         --background: #292527;
         --link: #37aaff;
       }
-      :root.light {
-        --secondary: #37aaff;
-        --primary: #444;
-        --background: #fffdf9;
-        --link: #37aaff;
+      :root.darker {
+        --secondary: #ffdf37;
+        --primary: white;
+        --background: #000;
+        --link: #ffdf37;
       }
 
       body {
@@ -98,11 +98,21 @@
         color:var(--primary);
         background:transparent;
         border:0;
-        text-align:center;
-        width:2em;
-        height:2em;
+        text-align:right;
         cursor:pointer;
         margin-left:auto;
+      }
+      #theme-toggle:before{
+        content:"darker mode";
+        display:inline-block;
+        max-width:0;
+        overflow:hidden;
+        white-space:nowrap;
+        transition:max-width 0.3s;
+        vertical-align:middle;
+      }
+      .darker #theme-toggle:before{
+        max-width:100%;
       }
 
     </style>
@@ -135,7 +145,7 @@
 
     <script>
       document.getElementById("theme-toggle").addEventListener("click",function(){
-        document.documentElement.classList.toggle("light")
+        document.documentElement.classList.toggle("darker")
       });
     </script>
   </body>

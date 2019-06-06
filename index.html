@@ -119,6 +119,12 @@
         text-align:right;
         cursor:pointer;
         margin-left:auto;
+        transition:all 0.2s;
+        border-radius:4px;
+      }
+      .darker #theme-toggle{
+        background:var(--primary);
+        color:var(--background);
       }
       #theme-toggle:after{
         content:"🌕";
@@ -127,7 +133,7 @@
         content:"🌑";
       }
       #theme-toggle:before{
-        content:"darker mode";
+        content:"darker mode ";
         display:inline-block;
         max-width:0;
         overflow:hidden;

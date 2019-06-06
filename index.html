@@ -120,6 +120,12 @@
         cursor:pointer;
         margin-left:auto;
       }
+      #theme-toggle:after{
+        content:"🌕";
+      }
+      .darker #theme-toggle:after{
+        content:"🌑";
+      }
       #theme-toggle:before{
         content:"darker mode";
         display:inline-block;
@@ -146,7 +152,7 @@
         <a href="https://www.github.com/LeonardMeagher2" title="Checkout my code!">Github</a>, 
         <a href="https://codepen.io/LeonardMeagher2/" title="Some code snippets">CodePen</a>
 
-        <button id="theme-toggle">💡</button>
+        <button id="theme-toggle"></button>
       </nav>
     </section>
     <section>

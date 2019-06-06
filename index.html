@@ -1,100 +1,144 @@
 <html>
 
-<head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>LeonardMeagher2.com</title>
-  <style>
-    @import url('https://fonts.googleapis.com/css?family=Open+Sans');
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>LeonardMeagher2.com</title>
+    <style>
+      @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
-    :root {
-      --secondary: #ba4176;
-      --primary: white;
-      --link: #f73b7a;
-    }
+      :root {
+        --secondary: #37aaff;
+        --primary: white;
+        --background: #2d2428;
+        --link: #37aaff;
+      }
+      :root.light {
+        --secondary: #37aaff;
+        --primary: #444;
+        --background: #fffdf9;
+        --link: #37aaff;
+      }
 
-    body {
-      background: #2d2428;
-      color: white;
-      font-family: 'Open Sans', sans-serif;
-      text-align: center;
-    }
+      body {
+        background: var(--background);
+        color: var(--primary);
+        font-family: 'Open Sans', sans-serif;
+        text-align: center;
+      }
 
-    a {
-      color: var(--link);
-      text-decoration: none;
-      box-shadow: 0 1px 0 0;
-      transition: all 0.2s;
-    }
+      a {
+        color: var(--link);
+        text-decoration: none;
+        box-shadow: 0 1px 0 0;
+        transition: all 0.2s;
+      }
 
-    a:focus,
-    a:hover {
-      box-shadow: 0 2px 0px 0px;
-    }
+      a:focus,
+      a:hover {
+        box-shadow: 0 2px 0px 0px;
+      }
 
-    ul {
-      list-style: none;
-      padding: 0;
-    }
+      ul {
+        list-style: none;
+        padding: 0;
+      }
 
-    ul>li {
-      padding: 4px 0px;
-    }
+      ul>li {
+        padding: 4px 0px;
+      }
 
-    ul>li:before {
-      content: "- ";
-      color: var(--secondary);
-    }
+      ul>li:before {
+        content: "- ";
+        color: var(--secondary);
+      }
 
 
-    section {
-      border: 1px solid white;
-      max-width:728px;
-      text-align:left;
-      padding: 14px;
-      margin:4px;
-      margin-left:auto;
-      margin-right:auto;
-    }
+      section {
+        background: rgba(161, 179, 249, 0.09);
+        max-width:728px;
+        text-align:left;
+        padding: 14px;
+        margin:4px;
+        margin-left:auto;
+        margin-right:auto;
+      }
+      nav{
+        display:flex;
+        align-items:center;
+        justify-content:flex-start;
+      }
+      nav *{
+        flex-basis:auto;
+        flex-shrink:0;
+        flex-grow:0;
+        margin-left:4px;
+        margin-right:4px;
+      }
 
-    .js {
-      color: #F7DF1E;
-    }
-    .py {
-      color: #53a1e2;
-    }
-    .css {
-      color: #3595CF;
-    }
-    .html {
-      color: #E76233;
-    }
-  </style>
-  <!--script src="/blog.js"></script-->
-</head>
+      .lang {
+        font-weight:bold;
+      }
 
-<body>
-  <header>
-    <h1>Leonard Meagher</h1>
-  </header>
-  <section>
-    <nav>
-      <a href="https://www.github.com/LeonardMeagher2" title="Checkout my code!">Github</a>, 
-      <a href="https://codepen.io/LeonardMeagher2/" title="Some code snippets">CodePen</a>
-    </nav>
-  </section>
-  <section>
+      .wave{
+        animation:wave 3s infinite;
+        display:inline-block;
+        transform-origin:70% 70%;
+      }
+
+      @keyframes wave{
+        0%,20%,40%, 70%, 100%{
+          transform:rotate(0deg);
+        }
+        10%, 30%{
+          transform:rotate(25deg);
+        }
+      }
+
+      #theme-toggle{
+        color:var(--secondary);
+        background:var(--primary);
+        border:0;
+        border-radius:50%;
+        text-align:center;
+        width:2em;
+        height:2em;
+        cursor:pointer;
+        margin-left:auto;
+      }
+
+    </style>
+    <!--script src="/blog.js"></script-->
+  </head>
+
+  <body>
+    <header>
+      <h1><span class="wave">👋</span> I'm <span class="my-name">Leonard Meagher</span></h1>
+    </header>
+    <section>
+      <nav>
+        <a href="https://www.github.com/LeonardMeagher2" title="Checkout my code!">Github</a>, 
+        <a href="https://codepen.io/LeonardMeagher2/" title="Some code snippets">CodePen</a>
+
+        <button id="theme-toggle">💡</button>
+      </nav>
+    </section>
+    <section>
       <p>
         I program professionally, and as a hobby.
       </p>
       <ul>
-        <li>I program in <span class="js">Javascript</span>, and <span class="py">Python</span></li>
-        <li>I use <span class="css">CSS</span>, <span class="html">HTML</span> for markup and styling. </li>
-        <li>I use <a href="https://godotengine.org" title="Get the engine.">Godot</a> for hobby game development</li>
+        <li>I program in <span class="lang">Javascript</span>, and <span class="lang">Python</span></li>
+        <li>I use <span class="lang">CSS</span>, <span class="lang">HTML</span> for markup and styling. </li>
+        <li>I use <a href="https://godotengine.org" title="Get the engine.">Godot</a> for hobby game development using it's built in language <span class="lang">GDscript</span></li>
 
       </ul>
-  </section>
+    </section>
 
-
-</body>
+    <script>
+      document.getElementById("theme-toggle").addEventListener("click",function(){
+        document.documentElement.classList.toggle("light")
+      });
+    </script>
+  </body>
 
 </html>

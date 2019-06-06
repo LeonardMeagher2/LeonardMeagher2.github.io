@@ -119,21 +119,23 @@
         text-align:right;
         cursor:pointer;
         margin-left:auto;
-        transition:all 0.2s;
         border-radius:4px;
         padding:3px;
         font-weight:bold;
       }
       .darker #theme-toggle{
+        transition:all 0.2s;
         background:var(--secondary);
         color:var(--background);
       }
       #theme-toggle:after{
         content:"🌕";
         display:inline-block;
+        vertical-align: middle;
       }
       .darker #theme-toggle:after{
         content:"🌑";
+        margin-left:4px;
       }
       #theme-toggle:before{
         content:"darker mode";
@@ -141,10 +143,10 @@
         max-width:0;
         overflow:hidden;
         white-space:nowrap;
-        transition:max-width 0.3s;
         vertical-align:middle;
       }
       .darker #theme-toggle:before{
+        transition:max-width 0.3s;
         max-width:100%;
       }
 

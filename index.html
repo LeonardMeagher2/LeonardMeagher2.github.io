@@ -121,19 +121,22 @@
         margin-left:auto;
         transition:all 0.2s;
         border-radius:4px;
+        padding:3px;
+        font-weight:bold;
       }
       .darker #theme-toggle{
-        background:var(--primary);
+        background:var(--secondary);
         color:var(--background);
       }
       #theme-toggle:after{
         content:"🌕";
+        display:inline-block;
       }
       .darker #theme-toggle:after{
         content:"🌑";
       }
       #theme-toggle:before{
-        content:"darker mode ";
+        content:"darker mode";
         display:inline-block;
         max-width:0;
         overflow:hidden;

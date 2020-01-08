@@ -1,0 +1,198 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+@import url('https://fonts.googleapis.com/css?family=Hind+Siliguri&display=swap');
+
+:root{
+  --background: #515354;
+  --primary: #d85f52;
+  --highlight: #fff;
+}
+
+:root,body{
+  width:100%;
+  height:100%;
+  padding:0;
+  margin:0;
+  box-sizing:border-box;
+}
+
+body{
+  display:flex;
+  flex-direction:row;
+  padding:12px;
+  background: var(--background);
+  font-family: 'Hind Siliguri', sans-serif;
+  font-weight: bold;
+}
+
+.cards{
+  flex:1;
+  display:flex;
+  flex-wrap: wrap;
+  max-width:40em;
+  margin:auto;
+}
+
+.card{
+  flex:1;
+  min-width: 10em;
+  min-height: 13.2em;
+  display:flex;
+  user-select:none;
+}
+
+.card .content{
+  flex:1;
+  font-size:4em;
+  margin:3px;
+  text-align:center;
+  background: var(--primary);
+  
+  border-radius: 5px;
+  border: 10px solid var(--highlight);
+  background: var(--primary);
+  line-height: 2.7em;
+  
+  cursor: pointer;
+  color: var(--highlight);
+  position:relative;
+  transition: transform 0.3s;
+}
+
+.card .content:before, .card .content:after{
+  content: attr(data-value);
+  width: 1em;
+  height:1em;
+  line-height:1em;
+  font-size:0.3em;
+  position:absolute;
+  background:var(--primary);
+  border: 3px solid var(--primary);
+  border-radius: 5px;
+  padding:2px;
+  
+}
+.card .content:before{
+  top:-0.3em;
+  left:-0.3em;
+}
+.card .content:after{
+  bottom:-0.3em;
+  right:-0.3em;
+  transform: scale(-1);
+}
+.card .content:active{
+  transform: scale(0.9);
+}
+.card .content.active{
+  transform: scale(2) translate(-25%, -25%);
+  z-index:100;
+  position:fixed;
+  top:50%;
+  left:50%;
+  width:40vw;
+  height: 55vw;
+  line-height: 50vw;
+  transition: color 0.3s, transform 0.3s;
+}
+.card .content.hidden{
+  color:transparent;
+}
+
+.overlay{
+  width:100%;
+  height:100%;
+  position:fixed;
+  top:0;
+  bottom:0;
+  opacity:1;
+  pointer-events:auto;
+  background: var(--background);
+  transition: opacity 0.3s;
+}
+.overlay.hidden{
+  pointer-events:none;
+  opacity:0;
+}
+
+</style>
+</head>
+<body>
+
+<div class="cards">
+  <div class="card">
+    <div class="content" data-value="?">?</div>
+  </div>
+  <div class="card">
+    <div class="content" data-value="1">1</div>
+  </div>
+  <div class="card">
+    <div class="content" data-value="2">2</div>
+  </div>
+  <div class="card">
+    <div class="content" data-value="3">3</div>
+  </div>
+  <div class="card">
+    <div class="content" data-value="5">5</div>
+  </div>
+  <div class="card">
+    <div class="content" data-value="8">8</div>
+  </div>
+  <div class="card">
+    <div class="content" data-value="13">13</div>
+  </div>
+  <div class="card">
+    <div class="content" data-value="21">21</div>
+  </div>
+</div>
+<div class="overlay hidden"></div>
+
+<script>
+var cards = document.querySelectorAll(".card .content");
+var overlay = document.querySelector(".overlay");
+
+function handleClick(event){
+  if(this.classList.contains("active")){
+    if(this.classList.contains("hidden")){
+      this.classList.remove("hidden")
+    }else{
+      this.classList.remove("active");
+      document.body.style.overflow = "";
+      overlay.classList.add("hidden");
+    }
+  }else{
+    //var aspect = window.innerWidth / window.innerHeight;
+    this.classList.add("active");
+    this.classList.add("hidden");
+    document.body.style.overflow = "hidden";
+    overlay.classList.remove("hidden");
+  }
+}
+
+let accelerometer = new Accelerometer({frequency: 60});
+accelerometer.addEventListener('reading', ()=>{
+  var card = document.querySelector(".card .content.active");
+  var lengthSquared = accelerometer.x*accelerometer.x + accelerometer.y*accelerometer.y + accelerometer.z*accelerometer.z;
+  console.log(lengthSquared)
+  if(card){
+    card.classList.remove("hidden");
+  }
+});
+
+overlay.addEventListener("click", ()=>{
+  var card = document.querySelector(".card .content.active");
+  card.classList.remove("active");
+  card.classList.remove("hidden");
+  document.body.style.overflow = "";
+  overlay.classList.add("hidden");
+})
+
+cards.forEach((card)=>{
+  card.addEventListener("click", handleClick.bind(card));
+});
+</script>
+
+</body>
+</html>

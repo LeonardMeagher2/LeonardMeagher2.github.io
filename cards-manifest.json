@@ -1,0 +1,9 @@
+{
+  "name": "Cards",
+  "short_name": "Cards",
+  "start_url": "https://leonardmeagher2.com/cards.html",
+  "display": "standalone",
+  "background_color": "#d85f52",
+  "description": "A simply scrum poker app.",
+  "icons": []
+}

@@ -37,16 +37,16 @@ body{
   flex-wrap: wrap;
   max-width:40em;
   margin:auto;
+  justify-content: center;
+  align-items: center;
 }
 
 .card{
-  flex:1;
-  display:flex;
+  float:left;
   user-select:none;
 }
 
 .card .content{
-  flex:1;
   font-size:4em;
   margin:3px;
   text-align:center;
@@ -55,7 +55,7 @@ body{
   border-radius: 5px;
   border: 10px solid var(--highlight);
   background: var(--primary);
-  min-width: 10em;
+  min-width: 2em;
   line-height: 2.66em;
   
   cursor: pointer;

@@ -194,12 +194,12 @@ overlay.addEventListener("click", ()=>{
 cards.forEach((card)=>{
   card.addEventListener("click", handleClick.bind(card));
 });
-
-window.addEventListener("resize", ()=>{
+function resize(){
   var M = Math.max(window.innerWidth, window.innerHeight),
       m = Math.min(window.innerWidth, window.innerHeight);
   document.documentElement.style.setProperty('--aspect', M/m);
-});
+}
+window.addEventListener("resize", resize);
 </script>
 
 </body>

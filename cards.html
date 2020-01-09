@@ -10,7 +10,7 @@
   --background: #515354;
   --primary: #d85f52;
   --highlight: #fff;
-  --aspect: calc(1vmax/1vmin);
+  --aspect: 1.0;
 }
 
 :root,body{
@@ -193,6 +193,12 @@ overlay.addEventListener("click", ()=>{
 
 cards.forEach((card)=>{
   card.addEventListener("click", handleClick.bind(card));
+});
+
+window.addEventListener("resize", ()=>{
+  var M = Math.max(window.innerWidth, window.innerHeight),
+      m = Math.min(window.innerWidth, window.innerHeight);
+  document.documentElement.style.setProperty('--aspect', M/m);
 });
 </script>
 

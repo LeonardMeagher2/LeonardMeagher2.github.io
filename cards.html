@@ -196,7 +196,7 @@ cards.forEach((card)=>{
 function resize(){
   var M = Math.max(window.innerWidth, window.innerHeight),
       m = Math.min(window.innerWidth, window.innerHeight);
-  document.documentElement.style.setProperty('--aspect', m/M);
+  document.documentElement.style.setProperty('--aspect', 1.0/m);
 }
 window.addEventListener("resize", resize);
 reszie();

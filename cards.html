@@ -176,16 +176,6 @@ function handleClick(event){
   }
 }
 
-let accelerometer = new Accelerometer({frequency: 60});
-accelerometer.addEventListener('reading', ()=>{
-  var card = document.querySelector(".card .content.active");
-  var lengthSquared = accelerometer.x*accelerometer.x + accelerometer.y*accelerometer.y + accelerometer.z*accelerometer.z;
-  console.log(lengthSquared)
-  if(card){
-    card.classList.remove("hidden");
-  }
-});
-
 overlay.addEventListener("click", ()=>{
   var card = document.querySelector(".card .content.active");
   card.classList.remove("active");

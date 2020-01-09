@@ -10,8 +10,6 @@
   --background: #515354;
   --primary: #d85f52;
   --highlight: #fff;
-  --vmin: 1.0;
-  --vmax: 1.0;
 }
 
 :root,body{
@@ -95,9 +93,6 @@ body{
   position:fixed;
   top:50%;
   left:50%;
-  width:30vmin;
-  height: 40vmin;
-  line-height: 40vmin;
   transition: color 0.3s, transform 0.3s;
 }
 .card .content.hidden{
@@ -194,14 +189,6 @@ overlay.addEventListener("click", ()=>{
 cards.forEach((card)=>{
   card.addEventListener("click", handleClick.bind(card));
 });
-function resize(){
-  var M = Math.max(window.innerWidth, window.innerHeight),
-      m = Math.min(window.innerWidth, window.innerHeight);
-  document.documentElement.style.setProperty('--vmin', m/100.0);
-  document.documentElement.style.setProperty('--vmax', M/100.0);
-}
-window.addEventListener("resize", resize);
-resize();
 </script>
 
 </body>

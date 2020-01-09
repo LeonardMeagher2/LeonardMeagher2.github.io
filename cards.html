@@ -10,6 +10,7 @@
   --background: #515354;
   --primary: #d85f52;
   --highlight: #fff;
+  --aspect: calc(1vmax/1vmin);
 }
 
 :root,body{
@@ -40,7 +41,7 @@ body{
 .card{
   flex:1;
   min-width: 10em;
-  min-height: 13.2em;
+  min-height: calc(10em * var(--aspect));
   display:flex;
   user-select:none;
 }
@@ -94,9 +95,9 @@ body{
   position:fixed;
   top:50%;
   left:50%;
-  width:40vw;
-  height: 55vw;
-  line-height: 50vw;
+  width:30vmin;
+  height: 40vmin;
+  line-height: 50vmin;
   transition: color 0.3s, transform 0.3s;
 }
 .card .content.hidden{

@@ -214,7 +214,7 @@ let handleMotion = (function(){
       if(card && card.classList.contains("hidden")){
         card.classList.remove("hidden")
         if ("vibrate" in navigator) {
-          navigator.vibrate(30);
+          navigator.vibrate(100);
         }
       }
     }

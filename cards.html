@@ -213,6 +213,9 @@ let handleMotion = (function(){
       var card = document.querySelector(".card .content.active");
       if(card && card.classList.contains("hidden")){
         card.classList.remove("hidden")
+        if ("vibrate" in navigator) {
+          navigator.vibrate(200);
+        }
       }
     }
     

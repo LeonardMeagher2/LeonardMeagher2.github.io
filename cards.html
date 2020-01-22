@@ -160,7 +160,7 @@ body{
   </div>
 </div>
 <div class="overlay hidden"></div>
-
+<div id="debug"></div>
 <script>
 var cards = document.querySelectorAll(".card .content");
 var overlay = document.querySelector(".overlay");
@@ -209,7 +209,7 @@ let handleMotion = (function(){
       Math.abs(last[1] - acc.y),
       Math.abs(last[2] - acc.z)
     ];
-    
+    debug.textContent=delta.join(",");
     if(delta[0] > thre && delta[1] > thre && delta[2] > thre){
       var card = document.querySelector(".card .content.active");
       if(card && card.classList.contains("hidden")){

@@ -193,6 +193,37 @@ overlay.addEventListener("click", ()=>{
 cards.forEach((card)=>{
   card.addEventListener("click", handleClick.bind(card));
 });
+
+let handleMotion = (function(){
+  let last = [null,null,null];
+  let thre = 15;
+  return function (e){
+    let acc = e.accelerationIncludingGravity;
+    if(last[0] == null && last[1] == null && last[2] == null){
+      last[0] = acc.x;
+      last[1] = acc.y;
+      last[2] = acc.z;
+    }
+    let delta = [
+      Math.abs(last[0] - acc.x),
+      Math.abs(last[1] - acc.y),
+      Math.abs(last[2] - acc.z)
+    ];
+    
+    if(delta[0] > thre && delta[1] > thre && delta[2] > thre){
+      var card = document.querySelector(".card .content.active");
+      if(card && card.classList.contains("hidden")){
+        card.classList.remove("hidden")
+      }
+    }
+    
+    last = [acc.x, acc.y, acc.z];
+  }
+}())
+
+if ('ondevicemotion' in window) {
+  window.addEventListener('devicemotion', handleMotion, false);
+}
 </script>
 
 </body>

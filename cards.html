@@ -195,7 +195,7 @@ cards.forEach((card)=>{
 
 let handleMotion = (function(){
   let last = [null,null,null];
-  let thre = 4;
+  let thre = 3;
   return function (e){
     let acc = e.accelerationIncludingGravity;
     if(last[0] == null && last[1] == null && last[2] == null){
@@ -214,7 +214,7 @@ let handleMotion = (function(){
       if(card && card.classList.contains("hidden")){
         card.classList.remove("hidden")
         if ("vibrate" in navigator) {
-          navigator.vibrate(50);
+          navigator.vibrate(10);
         }
       }
     }

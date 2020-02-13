@@ -8,16 +8,16 @@
       @import url('https://fonts.googleapis.com/css?family=Noto+Sans&display=swap');
 
       :root {
-        --secondary: #37aaff;
+        --secondary: #ff3785;
         --primary: white;
-        --background: #292527;
-        --link: #37aaff;
+        --background: #222;
+        --link: #48aef9;
       }
       :root.darker {
-        --secondary: #ffdf37;
+        --secondary: #fbc770;
         --primary: white;
         --background: #000;
-        --link: #ffdf37;
+        --link: #fbc770;
       }
 
       body {
@@ -83,21 +83,6 @@
         font-weight:bold;
       }
 
-      .wave{
-        animation:wave 3s infinite;
-        display:inline-block;
-        transform-origin:70% 70%;
-      }
-      .wave:before{
-        content:"👋";
-      }
-      .darker .wave{
-        animation:bounce 3s infinite;
-      }
-      .darker .wave:before{
-        content:"🤘"
-      }
-
       @keyframes wave{
         0%,20%,40%, 70%, 100%{
           transform:rotate(0deg);
@@ -116,58 +101,19 @@
         }
       }
 
-      #theme-toggle{
-        color:var(--primary);
-        background:transparent;
-        border:0;
-        text-align:right;
-        cursor:pointer;
-        margin-left:auto;
-        border-radius:4px;
-        padding:3px;
-        font-weight:bold;
-      }
-      .darker #theme-toggle{
-        transition:all 0.2s;
-        background:var(--secondary);
-        color:var(--background);
-      }
-      #theme-toggle:after{
-        content:"🌕";
-        display:inline-block;
-        vertical-align: middle;
-      }
-      .darker #theme-toggle:after{
-        content:"🌑";
-        margin-left:4px;
-      }
-      #theme-toggle:before{
-        content:"darker mode";
-        display:inline-block;
-        max-width:0;
-        overflow:hidden;
-        white-space:nowrap;
-        vertical-align:middle;
-      }
-      .darker #theme-toggle:before{
-        transition:max-width 0.3s;
-        max-width:100%;
-      }
-
     </style>
     <!--script src="/blog.js"></script-->
   </head>
 
   <body>
     <header>
-      <h1><span class="wave"></span> I'm <span class="my-name">Leonard Meagher</span></h1>
+      <h1>I'm <span class="my-name">Leonard Meagher</span></h1>
     </header>
     <section>
       <nav>
         <a href="https://www.github.com/LeonardMeagher2" title="Checkout my code!">Github</a>, 
         <a href="https://codepen.io/LeonardMeagher2/" title="Some code snippets">CodePen</a>,
         <a href="https://www.linkedin.com/in/leonardmeagher/">LinkedIn</a>
-        <button id="theme-toggle"></button>
       </nav>
     </section>
     <section>
@@ -178,7 +124,6 @@
         <li>I program in <span class="lang">Javascript</span>, and <span class="lang">Python</span></li>
         <li>I use <span class="lang">CSS</span>, <span class="lang">HTML</span> for markup and styling. </li>
         <li>I use <a href="https://godotengine.org" title="Get the engine.">Godot</a> for hobby game development using it's built in language <span class="lang">GDscript</span></li>
-
       </ul>
     </section>
     <section>
@@ -189,16 +134,6 @@
         <li><a href="/ripples.html" title="Just something fun.">Simple water ripples</a></li>
       </ul>
     </section>
-
-    <script>
-      document.getElementById("theme-toggle").addEventListener("click",function(){
-        document.documentElement.classList.toggle("darker");
-        document.querySelector("meta[name=theme-color]").setAttribute(
-          "content",
-          getComputedStyle(document.documentElement).getPropertyValue('--background')
-        );
-      });
-    </script>
   </body>
 
 </html>

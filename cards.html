@@ -106,7 +106,7 @@
     }
 
     .card .content.active {
-      transform: scale(2) translate(-25%, -25%) rotateX(calc(var(--velocity-x) * 1deg));
+      transform: scale(2) translate(-25%, -25%) rotateZ(calc(var(--velocity-x) * 1deg));
       z-index: 100;
       position: fixed;
       top: 50%;
@@ -223,8 +223,9 @@
           Math.abs(last[2] - acc.z)
         ];
 
+        document.documentElement.style.setProperty("--velocity-x", delta[0])
+
         if (delta[0] > thre && delta[1] > thre && delta[2] > thre) {
-          document.documentElement.style.setProperty("--velocity-x", delta[0])
           var card = document.querySelector(".card .content.active");
           if (card && card.classList.contains("hidden")) {
             card.classList.remove("hidden")

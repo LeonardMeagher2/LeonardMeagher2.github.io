@@ -106,7 +106,7 @@
     }
 
     .card .content.active {
-      transform: scale(2) translate(-25%, -25%) rotateX(var(--velocity-x));
+      transform: scale(2) translate(-25%, -25%) rotateX(calc(var(--velocity-x) * 1deg));
       z-index: 100;
       position: fixed;
       top: 50%;

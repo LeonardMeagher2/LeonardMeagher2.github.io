@@ -223,7 +223,7 @@
           Math.abs(last[2] - acc.z)
         ];
 
-        document.documentElement.style.setProperty("--velocity-x", delta[0])
+        document.documentElement.style.setProperty("--velocity-x", delta[0] || 0)
 
         if (delta[0] > thre && delta[1] > thre && delta[2] > thre) {
           var card = document.querySelector(".card .content.active");

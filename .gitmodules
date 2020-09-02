@@ -1,0 +1,3 @@
+[submodule "godot/godot-gravity-aligned-character"]
+	path = godot/godot-gravity-aligned-character
+	url = https://github.com/LeonardMeagher2/godot-gravity-aligned-character.git

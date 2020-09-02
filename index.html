@@ -1,148 +1,157 @@
 <html>
 
-  <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="theme-color" content="#000000">
-    <title>LeonardMeagher2.com</title>
-    <style>
-      @import url('https://fonts.googleapis.com/css?family=Noto+Sans&display=swap');
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#000000">
+  <title>LeonardMeagher2.com</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Noto+Sans&display=swap');
 
-      :root.alt1{
-        --secondary: #ff3785;
-        --primary: white;
-        --background: #222;
-        --link: #48aef9;
-      }
-      :root{
-        --secondary: #fbc770;
-        --primary: white;
-        --background: #000;
-        --link: #fbc770;
-      }
+    :root {
+      --primary: rgb(32, 32, 32);
+      --secondary: #b170fb;
+      --tertiary: #d1c6da;
+      --background: rgb(236, 236, 236);
+      --link: #b170fb;
+    }
 
-      body {
-        background: var(--background);
-        color: var(--primary);
-        font-family: 'Noto Sans', sans-serif;
-        text-align: center;
-        transition: background 500ms;
-      }
+    body {
+      background: var(--background);
+      color: var(--primary);
+      font-family: 'Noto Sans', sans-serif;
+      text-align: center;
+      margin:0;
+    }
 
-      a {
-        color: var(--link);
-        text-decoration: none;
-        box-shadow: 0 1px 0 0;
-        transition: all 0.2s;
-      }
+    a {
+      color: var(--link);
+      text-decoration: none;
+      box-shadow: 0 1px 0 0;
+      transition: box-shadow 0.2s;
+    }
 
-      a:focus,
-      a:hover {
-        box-shadow: 0 4px 0px 0px;
-      }
+    a:focus,
+    a:hover {
+      box-shadow: 0 4px 0px 0px;
+    }
 
-      ul {
-        list-style: none;
-        padding: 0;
-      }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
 
-      ul>li {
-        padding: 4px 0px;
-        position: relative;
-      }
+    ul>li {
+      padding: 4px 0px;
+      position: relative;
+    }
 
-      ul>li:before {
-        content: "- ";
-        color: var(--secondary);
-        position:absolute;
-        left: -0.5em;
-      }
+    ul>li:before {
+      content: "- ";
+      color: var(--secondary);
+      position: absolute;
+      left: -0.5em;
+    }
 
-      header{
-        margin: 37px 0px;
-        font-size: 3.5vw;
-      }
-      .my-name span{
-        display:none;
-      }
-      .my-name:after{
-        content:"Leonard Meagher II";
-      }
-      section {
-        max-width:728px;
-        text-align:left;
-        padding: 37px 0px;
-        margin:4px;
-        margin-left:auto;
-        margin-right:auto;
-        border-top: 0.3em dotted #fff3;
-      }
-      nav{
-        display:flex;
-        align-items:center;
-        justify-content:flex-start;
-      }
-      nav *{
-        flex-basis:auto;
-        flex-shrink:0;
-        flex-grow:0;
-        margin-left:4px;
-        margin-right:4px;
-      }
+    header {
+      margin: 32px 0px;
+      font-size: 3.5vw;
+      display: flex;
+    }
 
-      .lang {
-        font-weight:bold;
-      }
-      
-      iframe{
-        display: block;
-        outline: none;
-        border: 0px;
-        width: 100%;
-        max-height: 668px;
-        height: 100%;
-        margin-bottom: 37px;
-      }
-      
-      h2{
-        text-align:center;
-      }
+    header>h1 {
+      position: relative;
+      flex-grow: 0;
+      flex-basis: auto;
+      margin: auto;
+    }
 
-    </style>
-    
-  </head>
+    header>h1>span {
+      display: inline-block;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      font-size: 25%;
+      color: var(--secondary);
+    }
 
-  <body>
-    <header>
-      <h1 class="my-name">I'm <span>Leonard Meagher the second</span></h1>
-    </header>
-    <section>
-      <nav>
-        <a tabindex="0" href="https://www.github.com/LeonardMeagher2" title="Checkout my code on Github" >Github</a>, 
-        <a tabindex="0" href="https://codepen.io/LeonardMeagher2/" title="Creative code snippets CodePen" >CodePen</a>,
-        <a tabindex="0" href="https://www.linkedin.com/in/leonardmeagher/" title="Me professionally on LinkedIn" >LinkedIn</a>
-      </nav>
-    </section>
-    <section>
-      <p>
-        I program professionally, and as a hobby.
-      </p>
-      <ul>
-        <li>I program in <span class="lang">Javascript</span>, and <span class="lang">Python</span></li>
-        <li>I use <span class="lang">CSS</span>, <span class="lang">HTML</span> for markup and styling. </li>
-        <li>I use <a tabindex="0" href="https://godotengine.org" title="Get the Godot game engine.">Godot</a> for hobby game development using it's built in language <span class="lang">GDscript</span></li>
-      </ul>
-    </section>
-    <section>
-      <p>Checkout some little experiments I've done here.</p>
-      <h2><a tabindex="0" href="/cards.html" title="I made this planning poker application for work." >Planning Poker</a></h2>
-      <iframe src="/cards.html"></iframe>
-      
-      <h2><a tabindex="0" href="/conway.html" title="Conway's game of life used to draw water colors." >Conway's Water Color</a></h2>
-      <iframe src="/conway.html"></iframe>
-      
-      <h2><a tabindex="0" href="/ripples.html" title="Click around to make ripples like water.">Water Ripples</a></h2>
-      <iframe src="/ripples.html"></iframe>
-    </section>
-  </body>
+    nav,
+    section {
+      max-width: 728px;      
+      padding: 32px 0px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    section{
+      text-align: left;
+    }
+
+    section.wide {
+      max-width: 100%;
+      padding: 32px;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    nav>* {
+      flex-basis: auto;
+      flex-grow: 0;
+      margin-left: 4px;
+      margin-right: 4px;
+    }
+
+    .lang {
+      font-weight: bold;
+    }
+
+    iframe {
+      display: block;
+      outline: none;
+      border: 0px;
+      width: 100%;
+      max-height: 668px;
+      height: 100%;
+      margin-bottom: 32px;
+    }
+
+    h2 {
+      text-align: center;
+    }
+
+    .columns {
+      display: flex;
+    }
+    .columns>*{
+      flex:1;
+    }
+  </style>
+
+</head>
+
+<body>
+  <header>
+    <h1 class="my-name">I'm Leonard Meagher <span>the second</span></h1>
+  </header>
+  <nav>
+    <a tabindex="0" href="https://www.github.com/LeonardMeagher2" title="Checkout my code on Github">Github</a>,
+    <a tabindex="0" href="https://codepen.io/LeonardMeagher2/" title="Creative code snippets CodePen">CodePen</a>,
+    <a tabindex="0" href="https://www.linkedin.com/in/leonardmeagher/"
+      title="Me professionally on LinkedIn">LinkedIn</a>
+  </nav>
+  <section>
+    <p>
+      I program professionally, and as a hobby.
+    </p>
+    <ul>
+      <li>I program in <span class="lang">Javascript</span>, and <span class="lang">Python</span></li>
+      <li>I use <span class="lang">CSS</span>, <span class="lang">HTML</span> for markup and styling. </li>
+      <li>I use <a tabindex="0" href="https://godotengine.org" title="Get the Godot game engine.">Godot</a> for hobby
+        game development using it's built in language <span class="lang">GDscript</span></li>
+    </ul>
+  </section>
+</body>
 
 </html>
